@@ -1,0 +1,73 @@
+🚀 Dockerized Java Application
+This project is a beginner-friendly Java application containerized using Docker, developed as part of my learning journey to become a DevOps Engineer. The application prints the current day, date, and time, and runs inside a Docker container on an AWS EC2 Ubuntu instance.
+
+📌 About the Project
+The goal of this project was to understand how to:
+
+Set up and run Docker on a cloud server
+
+Write a functional Dockerfile
+
+Compile and run Java code inside a container
+
+Practice basic DevOps tasks like building and deploying containerized applications
+
+🛠️ Technologies Used
+Java (OpenJDK 17)
+
+Docker
+
+AWS EC2 (Ubuntu)
+
+Linux Terminal
+
+Vim Editor
+
+📁 Project Structure
+css
+Copy
+Edit
+dockerized-java-app/
+├── Dockerfile
+└── src/
+    └── Main.java
+⚙️ Dockerfile Breakdown
+Base Image: Used a lightweight Alpine Linux image with OpenJDK 17
+FROM openjdk:17-jdk-alpine
+
+Set Working Directory:
+WORKDIR /app
+
+Copy Java File into Container:
+COPY src/Main.java /app/Main.java
+
+Compile the Java Program:
+RUN javac Main.java
+
+Run the Program:
+CMD ["java", "Main"]
+
+📦 How to Run
+bash
+Copy
+Edit
+docker build -t java-app .
+docker run java-app
+🖥️ Sample Output:
+Hello, Docker! Current date: Wed Jun 25 20:13:07 GMT 2025
+
+💡 What I Learned
+Writing Dockerfiles for Java apps
+
+Compiling Java inside containers
+
+Running and managing Docker containers
+
+Deploying and testing from a cloud instance (AWS EC2)
+
+🙌 Future Improvements
+Support for Java packages and multiple files
+
+Add Docker Compose support
+
+Deploy using Kubernetes or CI/CD pipeline
